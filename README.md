@@ -2,8 +2,9 @@
 
 A web-based HR application built to digitize and streamline the process of submitting and managing leave requests and sick day reports.
 
-Built as a university group project at **HWG Ludwigshafen** — Wirtschaftsinformatik B.Sc.  
-**My role:** Frontend development — JSP views, CSS styling, JavaScript validation.
+Built as a university group project at **HWG Ludwigshafen** Wirtschaftsinformatik B.Sc.  
+
+**My role:** Frontend development (JSP views, CSS styling, JavaScript validation).
 
 ---
 
@@ -29,20 +30,20 @@ Built as a university group project at **HWG Ludwigshafen** — Wirtschaftsinfor
 ![Manager Dashboard](screenshot/head-manager-dashboard/head%20manager.PNG)
 
 ### HR Dashboard
-![HR Dashboard](screenshots/hr-dashboard.png)
+![HR Dashboard](screenshot/hr-dashboard/hr-dashboard.PNG)
 
 ### Admin Dashboard
 ![Admin Dashboard](screenshot/admin-dashboard/admin.PNG)
 
 
 ### Database Schema
-![Database](screenshots/datenbank.png)
+![Database](screenshot/database-schema/database-schema.PNG)
 
 ---
 
 ## About the Project
 
-Many companies still manage leave requests and sick day reports manually or on paper — leading to inefficient workflows and high administrative overhead.
+Many companies still manage leave requests and sick day reports manually or on paper , leading to inefficient workflows and high administrative overhead.
 
 **GoRelax** solves this by providing a fully digital, role-based web portal where:
 - Employees submit leave requests and sick day reports online
@@ -54,15 +55,15 @@ Many companies still manage leave requests and sick day reports manually or on p
 
 ## Features
 
-- **Role-based access** — 4 user roles with separate dashboards
+- **Role-based access** : 4 user roles with separate dashboards
   - Employee, Manager, HR Manager, Admin
-- **Leave request management** — submit, approve, reject with automatic vacation day calculation
-- **Sick day management** — submit with optional medical certificate upload
-- **Status tracking** — real-time status updates (Open / In Progress / Approved / Rejected)
-- **User management** — activate, deactivate, delete accounts
-- **Contact form** — users can send messages directly to the Admin
-- **Form validation** — client-side JavaScript validation on all forms
-- **Automatic overlap detection** — prevents duplicate approved leave periods
+- **Leave request management** : submit, approve, reject with automatic vacation day calculation
+- **Sick day management** : submit with optional medical certificate upload
+- **Status tracking** : real-time status updates (Open / In Progress / Approved / Rejected)
+- **User management** : activate, deactivate, delete accounts
+- **Contact form** : users can send messages directly to the Admin
+- **Form validation** : client-side JavaScript validation on all forms
+- **Automatic overlap detection** : prevents duplicate approved leave periods
 
 ---
 
@@ -84,18 +85,18 @@ Many companies still manage leave requests and sick day reports manually or on p
 
 4 tables with relational design:
 
-- **mitarbeiter** — employee data (PK: Personalnummer)
-- **urlaubsantrag** — leave requests (FK: Personalnummer)
-- **krankmeldung** — sick day reports (FK: Personalnummer)
-- **meldungadmin** — contact messages to admin
+- **mitarbeiter** - employee data (PK: Personalnummer)
+- **urlaubsantrag** - leave requests (FK: Personalnummer)
+- **krankmeldung** - sick day reports (FK: Personalnummer)
+- **meldungadmin** - contact messages to admin
 
 ---
 
 ## My Contributions
 
-- Built all JSP view pages (Login, Registration, Employee Portal, Leave Request, Sick Day, Status Overview)
-- Designed and implemented `GoRelax.css` — full layout, navigation, forms, tables, hover effects, fixed footer
-- Implemented client-side JavaScript validation in `GoHello.js` — form field checks, password length, error messages
+- Built JSP view pages (Login, Registration, Employee Portal, Leave Request, Sick Day, Status Overview)
+- Designed and implemented `GoRelax.css` - full layout, navigation, forms, tables, hover effects, fixed footer
+- Implemented client-side JavaScript validation in `GoHello.js` - form field checks, password length, error messages
 - Implemented tooltip functionality in `Hello.js`
 
 ---
@@ -105,22 +106,33 @@ Many companies still manage leave requests and sick day reports manually or on p
 ```
 GoRelax/
 ├── src/main/java/
-│   ├── de.hwg_lu.bwi520.beans/       → JavaBeans (business logic)
+│   ├── beans/                        --> JavaBeans (business logic)
 │   │   ├── AdminBean.java
 │   │   ├── AntragsBean.java
-│   │   ├── GoRelaxBean.java
 │   │   ├── KrankmeldungBean.java
 │   │   ├── LoginBean.java
-│   │   └── UrlaubBean.java
-│   ├── de.hwg_lu.bwi520.jdbc/        → Database connection
-│   └── de.hwg_lu.bwi520.keineBeans/  → Model classes
+│   │   └── ....
+│   ├── jdbc/                          --> Database connection
+│   │   ├── AppInstallTables.java
+│   │   ├── JDBCAccess.java
+│   │   └── PostgreSQLAccess.java
+│   │   └── ...
+│   └── keineBeans/                   --> Model classes
+│   │   ├── Benutzer.java
+│   │   ├── Krankmeldung.java
+│   │   └── Urlaub.java
+│   │   └── ....
 ├── src/main/webapp/
 │   ├── css/
-│   │   └── GoRelax.css               → Main stylesheet
+│   │   └── GoRelax.css               --> Main stylesheet
+│   └── img/                         
+│       ├──employee icon.png
+│       ├── image background.png
+│       └── ...
 │   ├── js/
-│   │   ├── Hello.js                  → Tooltip logic
-│   │   └── GoHello.js                → Form validation
-│   └── jsp/                          → All view pages
+│   │   ├── Hello.js                  --> Tooltip logic
+│   │   └── GoHello.js                --> Form validation
+│   └── jsp/                          --> All view pages
 │       ├── LoginView.jsp
 │       ├── RegistrierungView.jsp
 │       ├── MitarbeiterView.jsp
@@ -128,7 +140,7 @@ GoRelax/
 │       ├── HRView.jsp
 │       ├── AdminView.jsp
 │       └── ...
-└── README.md
+└── README.md 
 ```
 
 ---
@@ -149,17 +161,12 @@ This project requires a local setup with Eclipse, Apache Tomcat and PostgreSQL.
 
 ## Team
 
-Built by a team of 3 — Wirtschaftsinformatik B.Sc., HWG Ludwigshafen (SoSe 2025)
+Built by a team of 3 Wirtschaftsinformatik B.Sc., HWG Ludwigshafen (Sommer Semester 2025)
 
-- Gesalide Ariane Sime Tapondjou — Frontend (Views, CSS, JavaScript)
-- Dylan Pafoule — Backend
-- Marina Raissa Kamani Tchamaha — Backend
+- Gesalide Ariane Sime Tapondjou 
+- Dylan Pafoule  
+- Marina Raissa Kamani Tchamaha 
 
 Supervisor: Prof. Dr. Haio Röckle
 
 ---
-
-## Links
-
-- 🔗 [LinkedIn](https://linkedin.com/in/ariane-sime-9022632b3/)
-- 💻 [GitHub](https://github.com/ArianeSame)
